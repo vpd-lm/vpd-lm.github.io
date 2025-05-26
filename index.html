@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="Dolphins"/>
+  <meta property="og:description" content="Dolphins: Multimodal Language Model for Driving"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  
+
+
+
+  <meta name="twitter:title" content="Dolphins">
+  <meta name="twitter:description" content="Dolphins: A Multi-Modal Driving Model for Zero and Few-shot (In-context) Learning">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>VLM-Driver</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">-->
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Dolphins: Multimodal Language Model for Driving</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+            <!-- Paper authors -->
+                <span class="author-block">
+                  <a href="https://gray311.github.io/" target="_blank">Yingzi Ma</a><sup>1</sup>,&nbsp;</span>
+                <span class="author-block">
+                  <a href="https://kikacaty.github.io/" target="_blank">Yulong Cao</a><sup>2</sup>,&nbsp;</span>
+                <span class="author-block">
+                  <a href="https://web.eecs.umich.edu/~jiachens/" target="_blank">Jiachen Sun</a><sup>3</sup>,&nbsp;</span>
+                <span class="author-block">
+                  <a href="https://profiles.stanford.edu/marco-pavone" target="_blank">Marco Pavone</a><sup>2,4</sup>,&nbsp;</span>
+                <span class="author-block">
+                  <a href="https://xiaocw11.github.io/" target="_blank">Chaowei Xiao</a><sup>1,2</sup>,&nbsp;</span><br>
+                <!-- <span class="author-block">
+                  <a href="https://anas-awadalla.streamlit.app/" target="_blank">Anas Awadalla</a><sup>5</sup>,&nbsp;</span>
+                <span class="author-block">
+                  <a href="https://homes.cs.washington.edu/~jpgard/" target="_blank">Josh Gardner</a><sup>5</sup>,&nbsp;</span>
+                <span class="author-block">
+                  <a href="https://www.rohantaori.com/" target="_blank">Rohan Taori</a><sup>7</sup>,&nbsp;</span>
+                <span class="author-block">
+                  <a href="https://people.csail.mit.edu/ludwigs/" target="_blank">Ludwig Schmidt</a><sup>4,5,8</sup>&nbsp;</span> -->
+                </div>
+
+                <div class="is-size-5 publication-authors">
+                  <span class="author-block"><sup>1</sup>University of Wisconsin-Madison,&nbsp;&nbsp;</span>
+                  <span class="author-block"><sup>2</sup> NVIDIA,&nbsp;&nbsp;</span>    
+                  <span class="author-block"><sup>3</sup> University of Michigan,&nbsp;&nbsp;</span>
+                  <span class="author-block"><sup>4</sup> Stanford University,&nbsp;&nbsp;</span>
+                  <!-- <span class="author-block"><sup>4</sup> Allen Institute for AI,&nbsp;&nbsp;</span>
+                  <span class="author-block"><sup>5</sup> University of Washington,&nbsp;&nbsp;</span>
+                  <span class="author-block"><sup>6</sup> University of California, Santa Barbara,&nbsp;&nbsp;</span>
+                  <span class="author-block"><sup>7</sup> Stanford University&nbsp;&nbsp;</span>
+                  <span class="author-block"><sup>8</sup> LAION</span>
+                  <span class="eql-cntrb"><small><br><sup>*</sup>Equal Contribution</small></span> -->
+                </div>
+
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2312.00438" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/vlm-driver/Dolphins" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+
+                <!-- HuggingFace Link -->
+                <!--<span class="link-block">
+                  <a href=" https://huggingface.co/datasets/mlfoundations/VisIT-Bench" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <p style="font-size:20px">&#x1F917;</p>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span>-->
+
+              <!-- HuggingFace Link -->
+                <!-- <span class="link-block">
+                  <a href=" https://huggingface.co/spaces/mlfoundations/VisIT-Bench-Leaderboard" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <p style="font-size:20px">&#x1F917;</p>
+                  </span>
+                  <span>Leaderboard</span>
+                </a>
+              </span>-->
+
+              <!-- Video demo Link -->
+                <span class="link-block">
+                  <a href="https://youtu.be/pJAdZKySgLg?si=3Z2kYXljHk4mfzaW" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video Demo</span>
+                </a>
+              </span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Paper Video -->
+<section class="section hero is-small is-light" style="height: 550px;">
+  <div class="container is-max-desktop">
+  <div class="columns is-centered has-text-centered">
+    <div class="publication-flipped">
+        <div class="content has-text-justified">
+            <p style="text-align:center;">
+                <iframe align="middle" width="900" height="450" src="https://www.youtube.com/embed/pJAdZKySgLg?si=zih2OAev7T36eTRs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+               <br>
+            </p>
+
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- Paper abstract -->
+<section class="hero is-small" style="height: 450px;">
+  <div class="hero-body">
+  <div class="container">
+    <div class="publication-flipped">
+        <div class="content has-text-justified">
+<!--             <img src="static/images/examples/Dolphins_overview.png"  style="width: 100%; height: 100%"/> -->
+            <h3 class="subtitle is-size-3-tablet has-text-left pb-3">
+               <p align="center", style="margin-top: -40px; margin-bottom: -20px; font-size: 40px;">
+                   <br>
+                    Abstract<br>
+               </p>
+            </h3>
+            <h3 class="subtitle is-size-5-tablet has-text-left pb-6">
+               <p style="text-align:justify; line-height:150%; margin-left: -150px; margin-right: -150px; font-size: 20px">
+                    The quest for fully autonomous vehicles (AVs) capable of navigating complex real-world scenarios with human-like understanding and responsiveness.
+In this paper, we introduce <em><b>Dolphins</b></em>, a novel vision-language model architected to imbibe human-like driving abilities. <em><b>Dolphins</b></em> is adept at processing multimodal inputs comprising video (or image) data, text instructions, and historical control signals to generate informed outputs corresponding to the provided instructions. Building upon the open-sourced pretrained Vision-Language Model, OpenFlamingo, we tailored <em><b>Dolphins</b></em> to the driving domain by constructing driving-specific instruction data and conducting instruction tuning. Through the utilization of the BDD-X dataset, we designed and consolidated four distinct AV tasks into <em><b>Dolphins</b></em> to foster a holistic understanding of intricate driving scenarios. As a result,  the distinctive features of <em><b>Dolphins</b></em> are delineated into two dimensions: (1) the ability to provide a comprehensive understanding of complex and long-tailed open-world driving scenarios and solve a spectrum of AV tasks, and (2) the emergence of human-like capabilities including gradient-free rapid learning and adaptation via in-context learning, reflection and error recovery, and interpretability. 
+               </p>
+            </h3>
+        </div>
+      </div>
+</section>
+
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel" data-interval="2000">
+
+      <div class="item">
+        <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+           Perception (Scenario Understanding)
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+             An example showcasing <em><b>Dolphins</b></em>’s capability in <b>scenario understanding</b>. The video features an ego car driving in a tunnel. <em><b>Dolphins</b></em> can identify the environment in which the ego car is situated and accurately determine the color of the front vehicle as well as infer the current time.
+         </p>
+         </h3>
+           
+        <div id="dialog-container">
+              <img src="static/images/examples/1.png"  style="width: 100%; height: 100%"/>
+              <div class="bubble-container">
+                  <div class="bubble right"><strong>User:</strong> Describe this driving related information in the video.</div>
+              </div>
+              <div class="bubble-container">
+                  <div class="bubble left"><strong>Dolphins:</strong> The video shows a car driving down a <span class="odd">tunnel</span>.
+                    <span class="eb">The car is moving forward</span>, and <span class="odd">the road ahead is dark</span>. The surrounding environment is illuminated by car lights and headlights,
+                    creating a dimly lit atmosphere. The presence of other cars in the tunnel indicates that <span class="tc">it is a busy and potentially congested area.</span> </div>
+              </div>
+
+              <div class="bubble-container">
+                  <div class="bubble right"><strong>User:</strong> What color is the car in front you?</div>
+              </div>
+              <div class="bubble-container">
+                  <div class="bubble left"><strong>Dolphins:</strong> <span class="ara">The car in the front of the car is black.</span></div>
+              </div>
+
+              <div class="bubble-container">
+                  <div class="bubble right"><strong>User:</strong> Please predict what time it is.</div>
+              </div>
+              <div class="bubble-container">
+                  <div class="bubble left"><strong>Dolphins:</strong> The time is around <span class="odd">night.</span></div>
+              </div>
+
+              <div id="tags">
+                  <span class="tag" style="color: black; background-color: #FFD9C0;" onclick="toggleHighlight('ara', '#FFD9C0')">Attributed Road Agents/Traffic Elements</span>
+                  <span class="tag" style="color: black; background-color: #8CC0DE;" onclick="toggleHighlight('odd', '#8CC0DE')">ODDs</span>
+                  <span class="tag" style="color: black; background-color: #CCEEBC;" onclick="toggleHighlight('tc', '#CCEEBC')">Traffic Conditions</span>
+                  <span class="tag" style="color: black; background-color: #FFFAD6;" onclick="toggleHighlight('ab', '#FFFAD6')">Agent Behaviors</span>
+                  <span class="tag" style="color: black; background-color: #E5D4FF;" onclick="toggleHighlight('eb', '#E5D4FF')">Ego Behaviors</span>
+              </div>
+          </div>
+         
+      </div>
+
+      <div class="item">
+        <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+           Perception (Scenario Understanding)
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+           <p>
+             An example showcasing <em><b>Dolphins</b></em>’s capability in <b>scenario understanding</b>. The video features an ego car driving on a snowy street. <em><b>Dolphins</b></em> can identify the environment in which the ego car is situated, the presence of the traffic light, and accurately determine the color of the passing vehicle.
+         </p>
+         </h3>
+           
+        <div id="dialog-container">
+              <img src="static/images/examples/2.png"  style="width: 100%; height: 100%"/>
+              <div class="bubble-container">
+                  <div class="bubble right"><strong>User:</strong> Describe this driving related information in the video.</div>
+              </div>
+              <div class="bubble-container">
+                  <div class="bubble left"><strong>Dolphins:</strong> The video captures <span class="odd">a snowy day on a narrow residential street.</span> The road is covered with a layer of white snow, 
+                    indicating that it has snowed recently. <span class="tc">The street is lined with parked cars on both sides, creating a cozy and serene atmosphere.</span> 
+                    <span class="eb">The car in the video is driving down a snow-covered road.</span> The driver is navigating through the snowy conditions with caution, 
+                    as the road appears to be slippery due to the accumulation of snow. The car's windshield wipers are on, likely to keep the windshield clear of snow 
+                    and provide better visibility. </div>
+              </div>
+
+              <div class="bubble-container">
+                  <div class="bubble right"><strong>User:</strong> Identify the color of the car that passes next to you. </div>
+              </div>
+              <div class="bubble-container">
+                  <div class="bubble left"><strong>Dolphins:</strong> The car that is passing next to the car is <span class="ara"> white. </span></div>
+              </div>
+
+              <div class="bubble-container">
+                  <div class="bubble right"><strong>User:</strong> In the video, during the ego car's traveling, was there any traffic light present? </div>
+              </div>
+              <div class="bubble-container">
+                  <div class="bubble left"><strong>Dolphins:</strong> There is <span class="ara">no traffic light</span> in the car's path.</div>
+              </div>
+
+              <div id="tags">
+                  <span class="tag" style="color: black; background-color: #FFD9C0;" onclick="toggleHighlight('ara', '#FFD9C0')">Attributed Road Agents/Traffic Elements</span>
+                  <span class="tag" style="color: black; background-color: #8CC0DE;" onclick="toggleHighlight('odd', '#8CC0DE')">ODDs</span>
+                  <span class="tag" style="color: black; background-color: #CCEEBC;" onclick="toggleHighlight('tc', '#CCEEBC')">Traffic Conditions</span>
+                  <span class="tag" style="color: black; background-color: #FFFAD6;" onclick="toggleHighlight('ab', '#FFFAD6')">Agent Behaviors</span>
+                  <span class="tag" style="color: black; background-color: #E5D4FF;" onclick="toggleHighlight('eb', '#E5D4FF')">Ego Behaviors</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="item">
+        <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+           Perception (Scenario Understanding)
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+          <p>
+            An example showcasing <em><b>Dolphins</b></em>’s capability in <b>scenario understanding</b>. The video shows an ego car stopped at a busy interaction with a police car next to it. <em><b>Dolphins</b></em> can identify the police officer and police car with its emergency lights on.
+         </p>
+         </h3>
+           
+        <div id="dialog-container">
+              <img src="static/images/examples/3.png"  style="width: 100%; height: 100%"/>
+              <div class="bubble-container">
+                  <div class="bubble right"><strong>User:</strong> Describe this driving related information in the video.</div>
+              </div>
+              <div class="bubble-container">
+                  <div class="bubble left"><strong>Dolphins:</strong> The video captures <span class="odd">a busy city intersection</span> with <span class="ab">multiple cars stopped</span> at 
+                    <span class="ara">a red light.</span> 
+                    <span class="ara">A police officer</span> is directing traffic from the intersection, ensuring the smooth flow of vehicles and maintaining order. 
+                    The presence of <span class="ara">a police car</span> further reinforces the idea that law enforcement is actively managing traffic in the area. </div>
+              </div>
+
+              <div class="bubble-container">
+                  <div class="bubble right"><strong>User:</strong> Describe this police car in detail.</div>
+              </div>
+              <div class="bubble-container">
+                  <div class="bubble left"><strong>Dolphins:</strong> The <span class="ara">police car</span> is in the intersection directing traffic. 
+                    <span class="ab">The car is stopped</span> in the middle of the intersection with its <span class="ara">emergency lights</span> on. 
+                    This indicates that the car is there to control the flow of traffic and ensure the safety of drivers and pedestrians.</div>
+              </div>
+
+              <div id="tags">
+                  <span class="tag" style="color: black; background-color: #FFD9C0;" onclick="toggleHighlight('ara', '#FFD9C0')">Attributed Road Agents/Traffic Elements</span>
+                  <span class="tag" style="color: black; background-color: #8CC0DE;" onclick="toggleHighlight('odd', '#8CC0DE')">ODDs</span>
+                  <span class="tag" style="color: black; background-color: #CCEEBC;" onclick="toggleHighlight('tc', '#CCEEBC')">Traffic Conditions</span>
+                  <span class="tag" style="color: black; background-color: #FFFAD6;" onclick="toggleHighlight('ab', '#FFFAD6')">Agent Behaviors</span>
+                  <span class="tag" style="color: black; background-color: #E5D4FF;" onclick="toggleHighlight('eb', '#E5D4FF')">Ego Behaviors</span>
+              </div>
+          </div>
+      </div>
+
+
+        <div class="item">
+        <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+           Perception (Scenario Understanding)
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+           <p>
+            An example showcasing <em><b>Dolphins</b></em>’s capability in <b>scenario understanding</b> and <b>behavior understanding</b>. The video features an ego car stopping at an intersection on a rainy day. <em><b>Dolphins</b></em> comprehensively describes the environment in which the ego car is situated, the behavior of the ego car, and can infer the reasons for its behavior.
+         </p>
+         </h3>
+           
+        <div id="dialog-container">
+              <img src="static/images/examples/4.png"  style="width: 100%; height: 100%"/>
+              <div class="bubble-container">
+                  <div class="bubble right"><strong>User:</strong> Describe this driving related information in the video.</div>
+              </div>
+              <div class="bubble-container">
+                  <div class="bubble left"><strong>Dolphins:</strong> The video shows <span class="odd">a rainy day on a city street.</span> 
+                    The street is wet from the rain, creating <span class="odd">a slick surface</span> for the cars to drive on. 
+                    <span class="tc">There are several cars on the road,</span> <span class="ab">with some driving forward and others moving in the opposite direction.</span> 
+                    The traffic lights are visible at various points along the street, indicating the flow of traffic. 
+                    The overall atmosphere of the video is that of a rainy city street with cars moving cautiously in the wet conditions. </div>
+              </div>
+
+              <div class="bubble-container">
+                  <div class="bubble right"><strong>User:</strong> What is the behavior of this ego car? Please describe the reason. </div>
+              </div>
+              <div class="bubble-container">
+                  <div class="bubble left"><strong>Dolphins:</strong> <span class="eb">The behavior of the ego car is braking and coming to a stop. </span>
+                    This action is prompted by the presence of <span class="ara">a red traffic light.</span> When the light turns red, 
+                    it serves as a signal for the driver to stop the car. In response to this signal, the driver applies the brakes, 
+                    gradually reducing the speed of the car until it comes to a complete stop, ensuring compliance with traffic regulations and maintaining safety. </div>
+              </div>
+
+              <div id="tags">
+                  <span class="tag" style="color: black; background-color: #FFD9C0;" onclick="toggleHighlight('ara', '#FFD9C0')">Attributed Road Agents/Traffic Elements</span>
+                  <span class="tag" style="color: black; background-color: #8CC0DE;" onclick="toggleHighlight('odd', '#8CC0DE')">ODDs</span>
+                  <span class="tag" style="color: black; background-color: #CCEEBC;" onclick="toggleHighlight('tc', '#CCEEBC')">Traffic Conditions</span>
+                  <span class="tag" style="color: black; background-color: #FFFAD6;" onclick="toggleHighlight('ab', '#FFFAD6')">Agent Behaviors</span>
+                  <span class="tag" style="color: black; background-color: #E5D4FF;" onclick="toggleHighlight('eb', '#E5D4FF')">Ego Behaviors</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="item">
+        <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+           Perception (Scenario Understanding)
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+           <p>
+            An example showcasing <em><b>Dolphins</b></em>’s capability in <b>scenario understanding</b> and <b>behavior understanding</b>. The video features an ego car making a right turn. <em><b>Dolphins</b></em> can identify these contents. <del>Words</del> means hallucination.
+         </p>
+         </h3>
+           
+        <div id="dialog-container">
+              <img src="static/images/examples/5.png"  style="width: 100%; height: 100%"/>
+              <div class="bubble-container">
+                  <div class="bubble right"><strong>User:</strong> Describe this driving related information in the video.</div>
+              </div>
+              <div class="bubble-container">
+                  <div class="bubble left"><strong>Dolphins:</strong> The video shows <span class="odd">a residential area with several houses and parked cars. </span>
+                    <span class="eb">The houses are of various colors, including yellow, green, and blue.</span> There is <span class="eb">a stop sign</span> visible in the video, 
+                    indicating a stop at the intersection. <span class="tc">The road is lined with parked cars on both sides, creating a visually busy scene.</span> </div>
+              </div>
+
+              <div class="bubble-container">
+                  <div class="bubble right"><strong>User:</strong> Tell me about the behavior of the car being driven in the video. </div>
+              </div>
+              <div class="bubble-container">
+                  <div class="bubble left"><strong>Dolphins:</strong> <span class="eb">The car is turning right.</span></div>
+              </div>
+
+              <div id="tags">
+                  <span class="tag" style="color: black; background-color: #FFD9C0;" onclick="toggleHighlight('ara', '#FFD9C0')">Attributed Road Agents/Traffic Elements</span>
+                  <span class="tag" style="color: black; background-color: #8CC0DE;" onclick="toggleHighlight('odd', '#8CC0DE')">ODDs</span>
+                  <span class="tag" style="color: black; background-color: #CCEEBC;" onclick="toggleHighlight('tc', '#CCEEBC')">Traffic Conditions</span>
+                  <span class="tag" style="color: black; background-color: #FFFAD6;" onclick="toggleHighlight('ab', '#FFFAD6')">Agent Behaviors</span>
+                  <span class="tag" style="color: black; background-color: #E5D4FF;" onclick="toggleHighlight('eb', '#E5D4FF')">Ego Behaviors</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="item">
+        <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+           Perception (Scenario Understanding)
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+          <p>
+            An example showcasing <em><b>Dolphins</b></em>’s capability in <b>scenario understanding</b> and <b>behavior understanding</b>. The video shows an ego car following a taxi and going through an intersection. <del>Words</del> means hallucination.
+         </p>
+         </h3>
+        
+        <div id="dialog-container">
+              <img src="static/images/examples/6.png"  style="width: 100%; height: 100%"/>
+              <div class="bubble-container">
+                  <div class="bubble right"><strong>User:</strong> Describe the video in detail.</div>
+              </div>
+              <div class="bubble-container">
+                  <div class="bubble left"><strong>Dolphins:</strong> The video captures <span class="odd">a busy city intersection<span class="ara"> with <span class="ara">a yellow taxi<span class="ara"> driving through it. 
+                    The intersection is bustling with activity, as there are several pedestrians crossing the street, some of them carrying handbags. 
+                    In addition to the <span class="ara">pedestrians</span>, there are multiple cars stopped at the intersection, waiting for their turn to proceed. 
+                    <span class="ab">The yellow taxi is making its way through the busy intersection,</span> navigating around the stopped cars and pedestrians. 
+                    <span class="ara">The traffic light is green,</span> indicating that it is safe for the taxi to continue its journey. 
+                    The overall atmosphere of the video suggests a typical day in a busy urban environment. </div>
+              </div>
+
+              <div class="bubble-container">
+                  <div class="bubble right"><strong>User:</strong> Tell me about the behavior of the car being driven in the video.</div>
+              </div>
+              <div class="bubble-container">
+                  <div class="bubble left"><strong>Dolphins:</strong> <span class="eb">The car is driving through an intersection in the city.</span></div>
+              </div>
+              <div id="tags">
+                  <span class="tag" style="color: black; background-color: #FFD9C0;" onclick="toggleHighlight('ara', '#FFD9C0')">Attributed Road Agents/Traffic Elements</span>
+                  <span class="tag" style="color: black; background-color: #8CC0DE;" onclick="toggleHighlight('odd', '#8CC0DE')">ODDs</span>
+                  <span class="tag" style="color: black; background-color: #CCEEBC;" onclick="toggleHighlight('tc', '#CCEEBC')">Traffic Conditions</span>
+                  <span class="tag" style="color: black; background-color: #FFFAD6;" onclick="toggleHighlight('ab', '#FFFAD6')">Agent Behaviors</span>
+                  <span class="tag" style="color: black; background-color: #E5D4FF;" onclick="toggleHighlight('eb', '#E5D4FF')">Ego Behaviors</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="item">
+        <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+           Perception (Scenario Understanding)
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+           <p>
+            An example showcasing <em><b>Dolphins</b></em>’s capability in <b>scenario understanding</b> and <b>behavior understanding</b>. The video shows an ego car driving slowly on a busy road at night. <em><b>Dolphins</b></em> can identify the ego car traveling at a slow speed and infer that the reason is that the speed of the vehicle ahead is restricting the ego car's speed.
+         </p>
+         </h3>
+           
+        <div id="dialog-container">
+              <img src="static/images/examples/7.png"  style="width: 100%; height: 100%"/>
+              <div class="bubble-container">
+                  <div class="bubble right"><strong>User:</strong> Describe this driving related information in the video.</div>
+              </div>
+              <div class="bubble-container">
+                  <div class="bubble left"><strong>Dolphins:</strong> The video shows a busy road at <span class="odd">night</span>, <span class="tc">with heavy traffic</span>. There are <span class="ara">several cars on the road</span>, 
+                    <span class="ab">all moving in the same direction</span>. The traffic is dense, creating a slow-moving flow. The cars are positioned closely to each other, 
+                    indicating a high level of congestion. <span class="odd">The road appears to be wet,</span> which may contribute to the reduced visibility and the need for cautious driving. </div>
+              </div>
+
+              <div class="bubble-container">
+                  <div class="bubble right"><strong>User:</strong> If this video is the first view of your driving, describe the current behavior of your car. </div>
+              </div>
+              <div class="bubble-container">
+                  <div class="bubble left"><strong>Dolphins:</strong> <span class="eb">The car is driving forward slowly.</span></div>
+              </div>
+
+              <div class="bubble-container">
+                  <div class="bubble right"><strong>User:</strong> Explain why you're travelling at a low speed. </div>
+              </div>
+              <div class="bubble-container">
+                  <div class="bubble left"><strong>Dolphins:</strong> The car is traveling at low speed because <span class="ab">there is slow-moving traffic ahead.</span></div>
+              </div>
+
+              <div id="tags">
+                  <span class="tag" style="color: black; background-color: #FFD9C0;" onclick="toggleHighlight('ara', '#FFD9C0')">Attributed Road Agents/Traffic Elements</span>
+                  <span class="tag" style="color: black; background-color: #8CC0DE;" onclick="toggleHighlight('odd', '#8CC0DE')">ODDs</span>
+                  <span class="tag" style="color: black; background-color: #CCEEBC;" onclick="toggleHighlight('tc', '#CCEEBC')">Traffic Conditions</span>
+                  <span class="tag" style="color: black; background-color: #FFFAD6;" onclick="toggleHighlight('ab', '#FFFAD6')">Agent Behaviors</span>
+                  <span class="tag" style="color: black; background-color: #E5D4FF;" onclick="toggleHighlight('eb', '#E5D4FF')">Ego Behaviors</span>
+              </div>
+          </div>
+      </div>
+
+      
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+
+
+<!-- Image carouse2 -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel"  data-interval="2000">
+
+      <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+           Prediction and Planning
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+             An example showcasing <em><b>Dolphins</b></em>'s capability in <b>prediction</b>. The video features an ego car driving on a snowy street. <em><b>Dolphins</b></em> can predict the trajectory of the white car passing by it. Since both the white car and the ego car are traveling in the same direction on a one-way road, the trajectories of both cars temporarily overlap.
+         </p>
+         <p style="text-align:center;">
+           <br><br>
+           <img src="static/images/prediction_and_planning/13.png"  style="width: 100%; height: 100%"/>
+         </p>
+         </h3>
+      </div>
+
+      <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+           Prediction and Planning
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+             An example showcasing <em><b>Dolphins</b></em>'s capability in <b>prediction</b>. The video shows an ego car making a U-turn. <em><b>Dolphins</b></em> can predict the trajectory of the black car parked in front of it. Since the black car in front is currently parked on the side of the road, Our model predicts that the car will remain there in the future and will not be positioned in the ego car's trajectory of turning.
+         </p>
+         <p style="text-align:center;">
+           <br><br>
+           <img src="static/images/prediction_and_planning/14.png"  style="width: 100%; height: 100%"/>
+         </p>
+         </h3>
+      </div>
+
+      <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+           Prediction and Planning
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+             An example showcasing <em><b>Dolphins</b></em>'s capability in <b>planning</b>. <em><b>Dolphins</b></em> can also understand control signals and employ them to predict the speed and turn angle of the ego car next second. Additionally, We can try to have <em><b>Dolphins</b></em> make a plan for the ego car to assist the driver during driving. However, due to the lack of sufficient information, such as the map, driving destination, etc., the plan is still limited to a brief period in the future.
+         </p>
+         <p style="text-align:center;">
+           <br><br>
+           <img src="static/images/prediction_and_planning/15.png"  style="width: 100%; height: 100%"/>
+         </p>
+         </h3>
+      </div>
+
+      <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+           Prediction and Planning
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+             An example showcasing <em><b>Dolphins</b></em>'s capability in <b>planning</b>. The video features an ego car driving on a dark city street. <em><b>Dolphins</b></em> can recognize that the ego car is approaching an intersection with a red traffic light, so it plans the future behavior for the ego car, which should be to come to a stop and wait for the traffic light to turn green to pass through the intersection safely.
+         </p>
+         <p style="text-align:center;">
+           <br><br>
+           <img src="static/images/prediction_and_planning/17.png"  style="width: 100%; height: 100%"/>
+         </p>
+         </h3>
+      </div>
+
+      <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+           Prediction and Planning
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+             An example showcasing <em><b>Dolphins</b></em>'s capability in <b>planning</b>. The video features an ego car driving on a highway and a white car is parked in front of it. <em><b>Dolphins</b></em>, by assessing that the white car in front has come to a stop, plans for the future behavior of the ego car, which should involve changing lanes to the left to avoid a collision with the stationary white car.
+         </p>
+         <p style="text-align:center;">
+           <br><br>
+           <img src="static/images/prediction_and_planning/18.png"  style="width: 100%; height: 100%"/>
+         </p>
+         </h3>
+      </div>
+
+      <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+           Prediction and Planning
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+             An example showcasing <em><b>Dolphins</b></em>'s capability in <b>prediction</b> and <b>contingency planning</b>. The video shows an ego car following a taxi and going through an intersection. On one hand, <em><b>Dolphins</b></em> can predict the future behavior of the yellow taxi for a certain period. On the other hand, <em><b>Dolphins</b></em> can make reasonable contingency plans for the ego car in case the yellow taxi in front suddenly accelerates or comes to a stop.
+         </p>
+         <p style="text-align:center;">
+           <br><br>
+           <img src="static/images/prediction_and_planning/19.png"  style="width: 100%; height: 100%"/>
+         </p>
+         </h3>
+      </div>
+
+      <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+           Prediction and Planning
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+             An example showcasing <em><b>Dolphins</b></em>'s capability in <b>prediction</b> and <b>contingency planning</b>. The video features an ego car driving in a snowy sity street on a rainy day. <em><b>Dolphins</b></em> can predict the future behavior of the white van in front of it while making reasonable contingency plans for the ego car in case the white decelerates or turns right.
+         </p>
+         <p style="text-align:center;">
+           <br><br>
+           <img src="static/images/prediction_and_planning/20.png"  style="width: 100%; height: 100%"/>
+         </p>
+         </h3>
+      </div>
+
+       <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+           Prediction and Planning
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+             An example showcasing <em><b>Dolphins</b></em>'s capability in <b>planning</b>. The video features an ego car driving on a highway on a rainy day. <em><b>Dolphins</b></em> is asked about the information regarding the black car to the right of the ego car, and it accurately determined that the black car's lane change would not affect the ego car's trajectory because they are separated by two lanes.
+         </p>
+         <p style="text-align:center;">
+           <br><br>
+           <img src="static/images/prediction_and_planning/21.png"  style="width: 100%; height: 100%"/>
+         </p>
+         </h3>
+      </div>
+
+      
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carouse2 -->
+
+
+<!-- Image carouse3 -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel"  data-interval="2000">
+
+        <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+            Rapid Learning and Adaptation
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+            Three examples show our model enables rapid adaptation to unseen instructions through <b>in-context learning</b>. In the first two examples, <em><b>Dolphins</b></em> learns to play the role of the driver through in-context examples and can accurately describe its behavior, despite not having been trained on such instructions. The third example shows that <em><b>Dolphins</b></em> can learn common sense from in-context examples, such as not being able to judge the current time based on the light when inside a tunnel.
+         </p>
+         <p style="text-align:center;">
+           <br><br>
+           <img src="static/images/in_context_learning/7.png"  style="width: 100%; height: 100%"/>
+         </p>
+         </h3>
+      </div>
+
+      <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+            Rapid Learning and Adaptation
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+             An example showcasing <em><b>Dolphins</b></em>'s capability in <b>prediction</b> through <b>in-context learning</b>. <em><b>Dolphins</b></em> can reason for future events that have not yet happened. Through in-context examples, our model can learn to answer "What If"-style questions, to imagine the behavior of the ego car in the future by language.
+         <p style="text-align:center;">
+           <br><br>
+           <img src="static/images/in_context_learning/12.png"  style="width: 100%; height: 100%"/>
+         </p>
+         </h3>
+      </div>
+
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carouse3 -->
+
+
+<!-- Image carouse4 -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel"  data-interval="2000">
+
+      <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+           Reflection and Error Recovering
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+            An example showcasing <em><b>Dolphins</b></em>'s capability in <b>reflection</b>. The video features an ego car driving down a snow-covered city street. The black vehicle in front of the ego car appears to want to change to the left lane, which would be positioned on the ego car's trajectory. Initially, <em><b>Dolphins</b></em> plans for the ego car to slow down and let the black car turn left. However, after being provided with information about the 'straight has the right of way' traffic rule, <em><b>Dolphins</b></em> reflects and revises the driving plan.
+         </p>
+         <p style="text-align:center;">
+           <br><br>
+           <img src="static/images/reflection/22.png"  style="width: 100%; height: 100%"/>
+         </p>
+         </h3>
+      </div>
+
+      <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+           Reflection and Error Recovering
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+            An example showcasing <em><b>Dolphins</b></em>'s capability in <b>reflection</b>. The video shows an ego car driving through an interaction with a white car coming from the opposite direction. Initially, <em><b>Dolphins</b></em> plans for the ego car to slow down and let the white car proceed. However, after being provided with information about the human driver decision, <em><b>Dolphins</b></em> reflects and revises the driving plan.
+         </p>
+         <p style="text-align:center;">
+           <br><br>
+           <img src="static/images/reflection/23.png"  style="width: 100%; height: 100%"/>
+         </p>
+         </h3>
+      </div>
+
+      <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+           Reflection and Error Recovering
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+            An example showcasing <em><b>Dolphins</b></em>’s capability in <b>reflection</b>. The video shows an ego car driving on a highway. Initially, <em><b>Dolphins</b></em> predicts that the white car in front of the ego car will continue to drive forward. However, after being provided with information about the human driver decision, <em><b>Dolphins</b></em> revises the wrong prediction and realizes that the ego car should have also stopped to avoid the white car that is about to stop and merge into the left lane.
+         </p>
+         <p style="text-align:center;">
+           <br><br>
+           <img src="static/images/reflection/24.png"  style="width: 100%; height: 100%"/>
+         </p>
+         </h3>
+      </div>
+
+      <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+           Reflection and Error Recovering
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+           An example showcasing <em><b>Dolphins</b></em>’s capability in <b>reflection</b>. The video shows an ego car stopping behind a black car. Initially, <em><b>Dolphins</b></em> plans for the ego car to remain stopped and wait for the traffic. However, after being provided with information about the human driver decision~(driving more aggressively), <em><b>Dolphins</b></em> reflects and plans for the ego car to change lanes to the left to continue moving forward when careful attention is paid to cars traveling the left lane, such as a white van.
+         </p>
+         <p style="text-align:center;">
+           <br><br>
+           <img src="static/images/reflection/25.png"  style="width: 100%; height: 100%"/>
+         </p>
+         </h3>
+      </div>
+
+      <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+           Reflection and Error Recovering
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+           An example showcasing <em><b>Dolphins</b></em>’s capability in <b>reflection</b>. The video features an ego car driving through an interaction on a city street. The black vehicle in front of the ego car appears to want to turn right as its right taillight is flashing. Initially, <em><b>Dolphins</b></em> predicts that the black car will continue to drive forward. However, after being provided with information about the 'slashing rear lights indicate a turn or lane change.' traffic rule, <em><b>Dolphins</b></em> reflects and revises the wrong prediction.
+         </p>
+         <p style="text-align:center;">
+           <br><br>
+           <img src="static/images/reflection/26.png"  style="width: 100%; height: 100%"/>
+         </p>
+         </h3>
+      </div>
+
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carouse4 -->
+
+
+<!-- Image carouse5 -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel"  data-interval="2000">
+
+      <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+            Interactive Conversation
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+            An example showcasing <em><b>Dolphins</b></em>'s capability in <b>interactive conversation</b>. The video features an ego car stopping at an intersection on a rainy day. And <em><b>Dolphins</b></em> can answer various questions in terms of the weather, the traffic lights, and how they affect driving.
+         </p>
+         <p style="text-align:center;">
+           <br><br>
+           <img src="static/images/conversation/8.png"  style="width: 100%; height: 100%"/>
+         </p>
+         </h3>
+      </div>
+
+      <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+            Interactive Conversation
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+            An example showcasing <em><b>Dolphins</b></em>'s capability in <b>interactive conversation</b>. This video shows an ego car stopped at an intersection waiting for a red light and a pedestrian crossing a zebra crossing. We can ask <em><b>Dolphins</b></em> some questions about what it’s paying attention to at this intersection.
+         </p>
+         <p style="text-align:center;">
+           <br><br>
+           <img src="static/images/conversation/9.png"  style="width: 100%; height: 100%"/>
+         </p>
+         </h3>
+      </div>
+
+      <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+            Interactive Conversation
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+            An example showcasing <em><b>Dolphins</b></em>'s capability in <b>interactive conversation</b>. In this video, there are no traffic lights, so the ego car just needs to pay attention to the pedestrians.
+         </p>
+         <p style="text-align:center;">
+           <br><br>
+           <img src="static/images/conversation/10.png"  style="width: 100%; height: 100%"/>
+         </p>
+         </h3>
+      </div>
+
+      <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+            Interactive Conversation
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+            An example showcasing <em><b>Dolphins</b></em>'s capability in <b>interactive conversation</b>. This video shows an ego car driving behind a bicyclist. By conversing with <em><b>Dolphins</b></em>, we can learn how to drive safely when there are cyclists nearby. And our model can also create a tagline for this scene.
+         </p>
+         <p style="text-align:center;">
+           <br><br>
+           <img src="static/images/conversation/11.png"  style="width: 100%; height: 100%"/>
+         </p>
+         </h3>
+      </div>
+
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carouse5 -->
+
+
+<!-- Image carouse6 -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel"  data-interval="2000">
+
+      <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+            Failure Example
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+            An example showcasing <em><b>Dolphins</b></em>'s capability in <b>interactive conversation</b>. The video features an ego car stopping at an intersection on a rainy day. And <em><b>Dolphins</b></em> can answer various questions in terms of the weather, the traffic lights, and how they affect driving.
+         </p>
+         <p style="text-align:center;">
+           <br><br>
+           <img src="static/images/conversation/8.png"  style="width: 100%; height: 100%"/>
+         </p>
+         </h3>
+      </div>
+
+      <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+            Failure Example
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+            An example showcasing <em><b>Dolphins</b></em>'s capability in <b>interactive conversation</b>. This video shows an ego car stopped at an intersection waiting for a red light and a pedestrian crossing a zebra crossing. We can ask <em><b>Dolphins</b></em> some questions about what it’s paying attention to at this intersection.
+         </p>
+         <p style="text-align:center;">
+           <br><br>
+           <img src="static/images/conversation/9.png"  style="width: 100%; height: 100%"/>
+         </p>
+         </h3>
+      </div>
+
+      <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+            Failure Example
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+            An example showcasing <em><b>Dolphins</b></em>'s capability in <b>interactive conversation</b>. In this video, there are no traffic lights, so the ego car just needs to pay attention to the pedestrians.
+         </p>
+         <p style="text-align:center;">
+           <br><br>
+           <img src="static/images/conversation/10.png"  style="width: 100%; height: 100%"/>
+         </p>
+         </h3>
+      </div>
+
+      <div class="item">
+         <h2 class="subtitle is-size-3-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+            Interactive Conversation
+           </h2>
+         <h3 class="subtitle is-size-4-tablet has-text-left pr-4 pl-4 pt-3 pb-3">
+         <p>
+            An example showcasing <em><b>Dolphins</b></em>'s capability in <b>interactive conversation</b>. This video shows an ego car driving behind a bicyclist. By conversing with <em><b>Dolphins</b></em>, we can learn how to drive safely when there are cyclists nearby. And our model can also create a tagline for this scene.
+         </p>
+         <p style="text-align:center;">
+           <br><br>
+           <img src="static/images/conversation/11.png"  style="width: 100%; height: 100%"/>
+         </p>
+         </h3>
+      </div>
+
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carouse6 -->
+
+
+
+<!--<script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/3.16.2/gradio.js"></script>-->
+<!-- Youtube video -->
+<!--<section class="hero is-small is-light">-->
+<!--  <div class="hero-body">-->
+<!--    <div class="container">-->
+<!--      &lt;!&ndash; Paper video. &ndash;&gt;-->
+<!--      <div class="columns is-centered has-text-centered">-->
+<!--          <div class="publication-video">-->
+<!--          <h3 class="subtitle is-size-4-tablet has-text-left">-->
+<!--               <p>-->
+<!--                   q2d's auto-generated dialogs enable query generation models to adapt and improve for specific dialog styles, creating labeled datasets for training and evaluation.-->
+<!--                   <br>T5 model predictions above/below the line show the impact of fine-tuning on MuSiQue dialogs.-->
+<!--               </p>-->
+<!--               <p style="text-align:center;">-->
+<!--                   <br><br>-->
+<!--                   <img src="static/images/q2d_5.png"  style="width: 60%; height: 60%"/>-->
+<!--               </p>-->
+<!--         </h3>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--      </div>-->
+<!--    </div>-->
+<!--</section>-->
+<!-- End youtube video-->
+
+<!-- Youtube video -->
+<!--<section class="hero is-small">-->
+<!--  <div class="hero-body">-->
+<!--    <div class="container">-->
+<!--      <h3 class="subtitle is-size-4-tablet has-background-info-light has-text-left pr-4 pl-4 pt-3 pb-3">-->
+<!--      We collect <i>normal</i> (synthetic, not weird) and <i>natural</i> (non-synthetic, not weird) images to investigate the main challenge in WHOOPS!. BLIP2 model performs well on <i>non-weird</i> cases but struggles on weird ones, indicating that weirdness is the primary challenge, not synthesis.-->
+<!--      </h3>-->
+<!--      <div class="columns is-centered has-text-centered">-->
+<!--          <div class="publication-video">-->
+<!--            <iframe src="https://nlphuji-wmtis-explorer-identify.hf.space" frameborder="0" width="850" height="450"></iframe>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+
+<!-- Paper poster -->
+<!--<section class="hero is-small is-light">-->
+<!--  <div class="hero-body">-->
+<!--    <div class="container">-->
+<!--      <h2 class="title">Paper</h2>-->
+<!--      <iframe  src="static/pdfs/WHOOPS_paper.pdf" width="100%" height="550">-->
+<!--          </iframe>-->
+<!--        -->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+<!--End paper poster -->
+
+<!--BibTex citation -->
+<section class="section" id="BibTeX">
+<div class="container is-max-desktop content">
+<h2 class="title">BibTeX</h2>
+<pre><code>@misc{ma2023dolphins,
+      title={Dolphins: Multimodal Language Model for Driving}, 
+      author={Yingzi Ma and Yulong Cao and Jiachen Sun and Marco Pavone and Chaowei Xiao},
+      year={2023},
+      eprint={2312.00438},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}</code>
+</div>
+</section>
+<!--End BibTex citation -->
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p style="color:gray;font-size:9.9px;">
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+<script>
+  function toggleHighlight(tag, highlightColor) {
+            const clickedTag = event.target;
+
+            // 获取特定类型的内容
+            const contentElements = document.querySelectorAll(`.${tag}`);
+
+            // 检查是否已经高亮
+            const isHighlighted = clickedTag.classList.contains('highlight');
+
+            // 移除之前的高亮
+            const highlightedElements = document.querySelectorAll('.highlight');
+            highlightedElements.forEach(element => {
+                element.classList.remove('highlight');
+            });
+
+            // 如果当前标签不是已经高亮的状态，则添加高亮，否则移除高亮
+            if (!isHighlighted) {
+                clickedTag.classList.add('highlight');
+                // 为特定类型的内容添加高亮
+                contentElements.forEach(element => {
+                    element.style.backgroundColor = highlightColor;
+                });
+            } else {
+                // 移除特定类型的内容的高亮
+                contentElements.forEach(element => {
+                    element.style.backgroundColor = '';
+                });
+            }
+        }
+</script>
+<!-- End of Statcounter Code -->
+</body>
+</html>
