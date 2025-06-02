@@ -1,0 +1,18 @@
+1. scene description
+the scene depicts a clear, sunny day with excellent visibility on a residential street in what appears to be a suburban neighborhood. the ego vehicle is traveling on a two-lane road with yellow center dividing lines, passing through a curved section of the street. on both sides of the road are large, upscale houses with well-maintained properties featuring white fences, manicured lawns, and modern architecture. there are several parked vehicles visible along the curb, including a white pickup truck (object 1) on the right side and another white pickup truck (object 2) on the left side. the road surface shows some wear with visible cracks, but overall it appears to be in reasonable condition. there are trees lining the street, and construction materials can be seen near one of the houses on the right side. the traffic appears light, with no moving vehicles visible ahead of the ego car.
+
+2. critical objects
+object 1: this is a white pickup truck positioned to the front-right of the ego vehicle. 
+object 2: this is a white pickup truck positioned to the front-left of the ego vehicle.
+object 3: this appears to be a dark-colored sedan positioned to the front-right of the ego vehicle.
+object 4: this appears to be a white minivan positioned to the front-right of the ego vehicle.
+object 5: this appears to be a white minivan positioned to the front-right of the ego vehicle.
+object 6: this appears to be a white minivan positioned to the front-right of the ego vehicle.
+object 7: this appears to be a white minivan positioned to the front-right of the ego vehicle.
+
+3. risk analysis
+in this scenario, the ego vehicle is traveling on a residential street with moderate traffic conditions. the most significant risk factor is the proximity of multiple vehicles to the ego vehicle, particularly the white pickup trucks (objects 1 and 2) that are positioned to the front-right of the ego vehicle. these vehicles appear to be parked along the curb rather than actively participating in traffic flow.
+
+if the ego vehicle were to make any sudden maneuvers, especially if attempting to change lanes or pass these parked vehicles, there would be a risk of collision. the vehicles are positioned close to each other, and any unexpected movement could create a dangerous situation. additionally, the presence of parked vehicles on both sides of the road limits escape routes for the ego vehicle in case of an emergency stop.
+
+risk level: unsafe
