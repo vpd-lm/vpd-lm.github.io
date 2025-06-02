@@ -37,7 +37,7 @@
 
   <style>
     /* Base font */
-    body { font-size: 0.85rem; }               /* ≈ 13.6 px */
+    body { font-size: 0.85rem; }
 
     /* Clear hierarchy */
     h1.title.is-1.publication-title { font-size: 2.3rem; }
@@ -45,26 +45,19 @@
     h3.subtitle.is-size-4-tablet    { font-size: 1.25rem; }
     h4.title.is-4.has-text-centered { font-size: 1.3rem; }
 
-    /* Paragraph & code smaller than headings */
+    /* Paragraph & code */
     p.is-size-5, .content p { font-size: 0.8rem; line-height: 1.55; }
     pre code                { font-size: 0.72rem; }
 
-    /* Wider layout */
+    /* Layout width */
     .container.is-max-desktop { max-width: 1200px; }
 
-    /* Divider */
-    hr.section-divider {
-      margin: .4rem 0 1.2rem 0;
-      border: none;
-      height: 1px;
-      background: #e0e0e0;
-    }
+    hr.section-divider { margin: .4rem 0 1.2rem 0; border: none; height: 1px; background: #e0e0e0; }
   </style>
 </head>
-
 <body>
 
-<!-- ───────────── HERO TITLE ───────────── -->
+<!-- ────────── HERO TITLE ────────── -->
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
@@ -92,7 +85,7 @@
   </div>
 </section>
 
-<!-- ───────────── ABSTRACT ───────────── -->
+<!-- ────────── ABSTRACT ────────── -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container is-max-desktop">
@@ -100,14 +93,17 @@
         <h2 class="title is-3 has-text-centered">Abstract</h2>
         <hr class="section-divider">
         <p class="is-size-5">
-          Vision-Language Models (VLMs) have shown strong visual-reasoning abilities, making them promising for autonomous-driving (AD) tasks. Unlike opaque expert-driven pipelines, VLMs produce natural-language explanations, offering interpretability for safety reasoning and rare-event discovery. Yet current VLM frameworks struggle to ground and track objects over time. We present <b>VPD-LM</b>, an end-to-end VLM for AD that uses object-centric video prompts and chain-of-thought reasoning. It processes raw camera streams and sensor metadata to output interpretable plans, perceptions, and safety assessments. We create a Driving Safety Benchmark by mining 3 k long-tail risky scenarios from nuPlan; 600 are manually labeled into low/medium/high risk. VPD-LM excels in planning and threat assessment and generalizes to unseen scenarios, highlighting the potential of VLM-based reasoning for safer, more robust self-driving.
+          Vision-Language Models (VLMs) have demonstrated remarkable visual reasoning capabilities, positioning them as promising solutions for a wide range of autonomous driving (AD) tasks. Unlike traditional expert-driven AD models, which often operate as opaque black boxes, VLMs generate natural language explanations for their decisions, offering inherent interpretability. This interpretability enables explicit reasoning about driving safety and facilitates the identification of rare or high-risk scenarios that conventional systems may overlook. However, existing VLM-based frameworks often struggle with grounding and tracking specific objects over time—a limitation that undermines robust decision-making in dynamic, real-world environments.
+          In this work, we introduce <em><b>VPD-LM</b></em>, an end-to-end Vision-Language Model for Autonomous Driving that addresses these challenges through object-centric, video-based visual prompts and chain-of-thought (CoT) reasoning. <em><b>VPD-LM</b></em> processes raw camera inputs and sensor metadata to generate interpretable natural language outputs for core driving tasks, including planning, perception, and safety assessment.
+          To rigorously evaluate safety reasoning, we go beyond standard nuScenes-based benchmarks by constructing a novel Driving Safety Benchmark. We extract approximately 3,000 long-tail scenarios with potential collision risks from the larger nuPlan dataset using our proposed Road Graph Occupancy Detection method. From these, 600 representative scenarios are manually labeled into three risk categories—low, medium, and high—creating a challenging and fine-grained testbed for risk-aware driving models.
+          Empirical results demonstrate that <em><b>VPD-LM</b></em> achieves strong performance in motion planning and threat assessment while generalizing effectively to complex and previously unseen scenarios. Our work highlights the potential of VLM-driven reasoning to significantly enhance safety, interpretability, and robustness in next-generation autonomous driving systems.
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ───────────── OUR APPROACH ───────────── -->
+<!-- ────────── OUR APPROACH ────────── -->
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container is-max-desktop">
@@ -178,7 +174,7 @@
   </div>
 </section>
 
-<!-- ───────────── RESULTS ───────────── -->
+<!-- ────────── RESULTS ────────── -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container is-max-desktop">
@@ -204,7 +200,8 @@
             <img src="static/images/vpd_lm_results_safety_benchmark.png" alt="Safety Benchmark"
                  style="width:100%;margin-bottom:1em;border:1px solid #ccc;">
             <p class="is-size-5">
-              On 600 nuPlan risk cases, VPD-R1 hits <b>92.28 %</b> accuracy, beating GPT-40 (60 %) and InternVL3 (69 %).
+              On 600 nuPlan risk cases, VPD-R1 hits <b>92.28&nbsp;%</b> accuracy, beating GPT-40 (60&nbsp;%) and
+              InternVL3 (69&nbsp;%).
             </p>
           </div>
         </div>
@@ -225,7 +222,7 @@
   </div>
 </section>
 
-<!-- ───────────── BIBTEX ───────────── -->
+<!-- ────────── BIBTEX ────────── -->
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title is-3 has-text-centered">BibTeX</h2>
@@ -239,7 +236,7 @@
   </div>
 </section>
 
-<!-- ───────────── FOOTER ───────────── -->
+<!-- ────────── FOOTER ────────── -->
 <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
@@ -258,7 +255,7 @@
 </footer>
 
 <script>
-  /* Optional highlight helper (legacy, unused) */
+  /* Optional highlight helper (legacy) */
   function toggleHighlight(tag, color) {
     const tgt = event.target;
     const els = document.querySelectorAll('.' + tag);
