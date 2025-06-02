@@ -36,222 +36,37 @@
   <script src="static/js/index.js"></script>
 
   <style>
+    /* Global text scaling */
     body {
-      font-size: 0.92rem; /* Reduces default text size from 16px to ~14.72px. Titles will scale too. */
-    }
-    h1.title.is-1.publication-title { font-size: 2.5rem; } /* Original is 3rem */
-    h2.title.is-3.has-text-centered { font-size: 1.75rem; } /* Original is 2rem */
-    h3.subtitle.is-size-4-tablet { font-size: 1.15rem; } /* Original is 1.25rem (tablet) for is-size-4 */
-    h4.title.is-4.has-text-centered { font-size: 1.3rem; } /* Original is 1.5rem */
-    
-    /* Adjust paragraph text specifically */
-    p.is-size-5, .content p {
-      font-size: 0.9rem; /* This will be 0.9 * current body rem which is already scaled */
-    }
-    /* Scale down BibTeX preformatted text */
-    pre code {
-       font-size: 0.8rem;
+      font-size: 0.85rem;  /* Smaller base font (≈13.6 px) */
     }
 
+    /* Heading tweaks (slightly smaller) */
+    h1.title.is-1.publication-title { font-size: 2.3rem; }
+    h2.title.is-3.has-text-centered { font-size: 1.6rem; }
+    h3.subtitle.is-size-4-tablet { font-size: 1.05rem; }
+    h4.title.is-4.has-text-centered { font-size: 1.2rem; }
+
+    /* Paragraph & code */
+    p.is-size-5, .content p               { font-size: 0.85rem; }
+    pre code                               { font-size: 0.75rem; }
+
+    /* Wider page container */
+    .container.is-max-desktop             { max-width: 1200px; } /* default was 960px */
+
+    /* Divider */
     hr.section-divider {
-      margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
+      margin-top: 0.4rem;
+      margin-bottom: 1.3rem;
       border: none;
       height: 1px;
-      background-color: #e0e0e0; /* A slightly lighter gray for the divider */
+      background-color: #e0e0e0;
     }
   </style>
 </head>
 <body>
 
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">VPD-LM: Improving Driving Safety Assessment via Object-Level Visual Prompting in Vision-Language Models</h1>
-            <div class="is-size-5 publication-authors">
-                <span class="author-block">Anonymous Author(s)</span>
-            </div>
-          </div>
-        </div>
-        <div class="columns is-centered"> <div class="column has-text-centered">
-            <span class="link-block">
-              <a href="VPD_LM (5).pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                  <i class="ai ai-arxiv"></i>
-                </span>
-                <span>Paper PDF</span>
-              </a>
-            </span>
-            <span class="link-block">
-              <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                  <i class="fab fa-github"></i>
-                </span>
-                <span>Code (Coming Soon)</span>
-              </a>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-        <div class="content has-text-justified">
-            <h2 class="title is-3 has-text-centered">Abstract</h2>
-            <hr class="section-divider">
-            <p class="is-size-5">
-                Vision-Language Models (VLMs) have demonstrated remarkable visual reasoning capabilities, positioning them as promising solutions for a wide range of autonomous driving (AD) tasks. Unlike traditional expert-driven AD models, which often operate as opaque black boxes, VLMs generate natural language explanations for their decisions, offering inherent interpretability. This interpretability enables explicit reasoning about driving safety and facilitates the identification of rare or high-risk scenarios that conventional systems may overlook. However, existing VLM-based frameworks often struggle with grounding and tracking specific objects over time—a limitation that undermines robust decision-making in dynamic, real-world environments. In this work, we introduce <em><b>VPD-LM</b></em>, an end-to-end Vision-Language Model for Autonomous Driving that addresses these challenges through object-centric, video-based visual prompts and chain-of-thought (CoT) reasoning. <em><b>VPD-LM</b></em> processes raw camera inputs and sensor metadata to generate interpretable natural language outputs for core driving tasks, including planning, perception, and safety assessment. To rigorously evaluate safety reasoning, we go beyond standard nuScenes-based benchmarks by constructing a novel Driving Safety Benchmark. We extract approximately 3,000 long-tail scenarios with potential collision risks from the larger nuPlan dataset using our proposed Road Graph Occupancy Detection method. From these, 600 representative scenarios are manually labeled into three risk categories—low, medium, and high—creating a challenging and fine-grained testbed for risk-aware driving models. Empirical results demonstrate that <em><b>VPD-LM</b></em> achieves strong performance in motion planning and threat assessment while generalizing effectively to complex and previously unseen scenarios. Our work highlights the potential of VLM-driven reasoning to significantly enhance safety, interpretability, and robustness in next-generation autonomous driving systems.
-            </p>
-        </div>
-    </div>
-  </div>
-</section>
-
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Our Approach</h2>
-        <hr class="section-divider">
-      <div id="results-carousel-approach" class="carousel results-carousel" data-interval="4500">
-
-      <div class="item">
-        <h3 class="subtitle is-size-4-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
-            1. Object-Centric Visual Prompting & Annotation
-        </h3>
-        <div class="columns is-vcentered">
-            <div class="column is-one-third">
-                <img src="static/images/vpd_lm_concept_visual_prompting.png" alt="Object-Centric Visual Prompting" style="width: 100%; height: auto; border: 1px solid #ccc;">
-            </div>
-            <div class="column">
-                <p class="is-size-5">
-                    VPD-LM introduces a temporal object-centric annotation pipeline. Expert detection models (e.g., DINO, YOLO-World) identify key road agents in video frames. Then, segmentation models like SAM-2 perform object tracking across the video sequence, yielding consistent masks and instance IDs. These structured annotations are overlaid on frames to create visual prompts, enabling the VLM to attend to specific agents and their temporal behaviors, which is crucial for analyzing dynamic interactions.
-                </p>
-            </div>
-        </div>
-      </div>
-
-      <div class="item">
-        <h3 class="subtitle is-size-4-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
-            2. Mining Long-Tail Risky Scenarios
-        </h3>
-        <div class="columns is-vcentered">
-            <div class="column is-one-third">
-                 <img src="static/images/vpd_lm_concept_risky_scenarios.png" alt="Mining Risky Scenarios with Road Graphs" style="width: 100%; height: auto; border: 1px solid #ccc;">
-            </div>
-            <div class="column">
-                <p class="is-size-5">
-                    We propose a rule-based Road Graph Occupancy Detection method to identify rare but critical driving scenarios. This involves constructing temporal occupancy graphs where road agents are nodes. By enumerating future meta-actions (e.g., accelerate, keep lane, change lane) for the ego vehicle and other agents, we simulate their short-horizon occupancy regions. Scenarios are flagged as risky if any combination of these actions leads to spatial overlap, indicating a potential collision. This method was used to build our novel Driving Safety Benchmark from the nuPlan dataset.
-                </p>
-            </div>
-        </div>
-      </div>
-
-      <div class="item">
-        <h3 class="subtitle is-size-4-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
-            3. Structured Grounded Reasoning with VLMs
-        </h3>
-         <div class="columns is-vcentered">
-            <div class="column is-one-third">
-                <img src="static/images/vpd_lm_concept_reasoning_flow.png" alt="Structured Grounded Reasoning Flow" style="width: 100%; height: auto; border: 1px solid #ccc;">
-            </div>
-            <div class="column">
-                <p class="is-size-5">
-                    VPD-LM employs a hierarchical, chain-of-thought reasoning process: (1) Overall Scene Understanding (analyzing the general environment). (2) Crucial Object Analysis (identifying key agents and their states). (3) Task-Specific Analysis (performing Prediction, Planning, or Risk Assessment based on the query). This coarse-to-fine reasoning, conditioned on visual prompts and optional textual traffic rules, bridges low-level perception with high-level decision-making for interpretable outputs.
-                </p>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Demonstration & Results</h2>
-      <hr class="section-divider">
-        <div class="columns is-multiline">
-            <div class="column is-one-third">
-                <div class="box">
-                    <h4 class="title is-4 has-text-centered">Enhanced Perception, Prediction & Planning</h4>
-                    <img src="static/images/vpd_lm_capability_ppp.png" alt="Perception, Prediction, Planning" style="width:100%; margin-bottom:1em;  border: 1px solid #ccc;">
-                    <p>VPD-LM processes visually prompted video frames and sensor metadata to generate interpretable natural language outputs for core driving tasks, including detailed scene perception, prediction of traffic participants' short-term intentions, and planning for the ego vehicle's future behavior.</p>
-                </div>
-            </div>
-            <div class="column is-one-third">
-                <div class="box">
-                    <h4 class="title is-4 has-text-centered">Superior Safety Assessment (Driving Risky Benchmark)</h4>
-                    <img src="static/images/vpd_lm_results_safety_benchmark.png" alt="Safety Benchmark Results" style="width:100%; margin-bottom:1em; border: 1px solid #ccc;">
-                    <p>On our novel Driving Risky Benchmark (600 scenarios from nuPlan), VPD-R1 (VPD-LM fine-tuned on risky reasoning data) achieves an average accuracy of <strong>92.28%</strong> in assessing safety, significantly outperforming strong baselines like GPT-40 (60.05%) and InternVL3 (68.71%). This highlights its effectiveness in complex long-tail scenarios.</p>
-                </div>
-            </div>
-            <div class="column is-one-third">
-                <div class="box">
-                     <h4 class="title is-4 has-text-centered">Broad Driving Task Generalization (DriveBench)</h4>
-                    <img src="static/images/vpd_lm_results_drivebench.png" alt="DriveBench Results" style="width:100%; margin-bottom:1em; border: 1px solid #ccc;">
-                    <p>VPD-R1 also demonstrates strong generalization on the DriveBench benchmark. It achieves top total scores in Perception (<strong>52.69</strong>) and Planning (<strong>60.67</strong>), indicating that the reasoning capabilities learned from safety-critical scenarios effectively transfer to a broader range of general driving tasks and understanding.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="BibTeX">
-<div class="container is-max-desktop content">
-<h2 class="title is-3 has-text-centered">BibTeX</h2> <hr class="section-divider">
-<pre><code>@inproceedings{vpd_lm_neurips2025,
-  title={Improving Driving Safety Assessment via Object-Level Visual Prompting in Vision-Language Models},
-  author={Anonymous Author(s)},
-  booktitle={Submitted to Conference on Neural Information Processing Systems (NeurIPS)},
-  year={2025}
-}</code></pre>
-</div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p style="color:gray;font-size:9.9px;">
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-  // The toggleHighlight function was specific to the previous paper's examples
-  // and is not used with the new content structure. It can be removed or left as is.
-  function toggleHighlight(tag, highlightColor) {
-            const clickedTag = event.target;
-            const contentElements = document.querySelectorAll(`.${tag}`);
-            const isHighlighted = clickedTag.classList.contains('highlight');
-            const highlightedElements = document.querySelectorAll('.highlight');
-            highlightedElements.forEach(element => {
-                element.classList.remove('highlight');
-            });
-
-            if (!isHighlighted) {
-                clickedTag.classList.add('highlight');
-                contentElements.forEach(element => {
-                    element.style.backgroundColor = highlightColor;
-                });
-            } else {
-                contentElements.forEach(element => {
-                    element.style.backgroundColor = '';
-                });
-            }
-        }
-</script>
+  <!-- (Rest of the document remains unchanged) -->
+  %%KEEP-REST%%
 </body>
 </html>
