@@ -1,0 +1,17 @@
+1. scene description
+the scene depicts a residential neighborhood during daytime with overcast weather conditions. the ego vehicle is traveling on a two-lane road flanked by single-family homes with various architectural styles. on both sides of the street, there are parked vehicles along the curbside, including a black suv (object 2) on the left side and a dark-colored sedan (object 1) on the right side. the environment features typical suburban elements: wooden fences, palm trees, utility poles with overhead wires, and landscaped areas with trees and shrubs. the road appears to be in good condition with visible lane markings, though it shows some wet patches suggesting recent rain. the overall setting is quiet and residential with no visible pedestrians or active traffic.
+
+2. critical objects
+object 1: this is a dark-colored sedan positioned to the front-right of the ego vehicle. 
+object 2: this is a black suv positioned to the front-left of the ego vehicle.
+object 3: this appears to be a person standing near the parked black suv on the right side of the road.
+object 5: this appears to be a basketball hoop located on the right side of the road, positioned above the parked vehicles.
+
+3. risk analysis
+in this scenario, the ego vehicle is traveling on a residential street with parked vehicles on both sides. the most critical objects are the black suv (object 2) on the left and the dark-colored sedan (object 1) on the right. 
+
+the ego vehicle has sufficient space to continue forward without immediate conflict with either vehicle. the black suv (object 2) is parked on the left side and appears to be stationary. similarly, the dark-colored sedan (object 1) is parked on the right side and also appears to be stationary. there is adequate lateral separation between these vehicles and the ego vehicle's path.
+
+however, there is a pedestrian (object 3) visible near the parked black suv on the right side. while this person appears to be standing still, their proximity to the parked vehicles creates a potential hazard if they were to suddenly enter the roadway. the ego vehicle should maintain awareness of this pedestrian and proceed with caution.
+
+risk level: unsafe
