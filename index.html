@@ -6,7 +6,7 @@
   <meta property="og:title" content="VPD-LM: Improving Driving Safety Assessment via Object-Level Visual Prompting in Vision-Language Models"/>
   <meta property="og:description" content="VPD-LM addresses limitations in VLM-based autonomous driving by incorporating object-centric, video-based visual prompts and chain-of-thought reasoning to enhance safety, interpretability, and robustness."/>
   <meta property="og:url" content="YOUR_WEBSITE_URL_HERE"/>
-  <meta property="og:image" content="static/image/vpd_lm_banner.png" />
+  <meta property="og:image" content="static/image/vpd_lm_banner.png"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
@@ -37,36 +37,265 @@
 
   <style>
     /* Global text scaling */
-    body {
-      font-size: 0.85rem;  /* Smaller base font (≈13.6 px) */
-    }
+    body { font-size: 0.85rem; }                 /* ≈13.6 px */
 
-    /* Heading tweaks (slightly smaller) */
+    /* Heading tweaks */
     h1.title.is-1.publication-title { font-size: 2.3rem; }
     h2.title.is-3.has-text-centered { font-size: 1.6rem; }
-    h3.subtitle.is-size-4-tablet { font-size: 1.05rem; }
+    h3.subtitle.is-size-4-tablet    { font-size: 1.05rem; }
     h4.title.is-4.has-text-centered { font-size: 1.2rem; }
 
     /* Paragraph & code */
-    p.is-size-5, .content p               { font-size: 0.85rem; }
-    pre code                               { font-size: 0.75rem; }
+    p.is-size-5, .content p { font-size: 0.85rem; }
+    pre code                { font-size: 0.75rem; }
 
-    /* Wider page container */
-    .container.is-max-desktop             { max-width: 1200px; } /* default was 960px */
+    /* Wider layout */
+    .container.is-max-desktop { max-width: 1200px; }  /* was 960 px */
 
     /* Divider */
     hr.section-divider {
-      margin-top: 0.4rem;
-      margin-bottom: 1.3rem;
+      margin: 0.4rem 0 1.3rem 0;
       border: none;
       height: 1px;
       background-color: #e0e0e0;
     }
   </style>
 </head>
+
 <body>
 
-  <!-- (Rest of the document remains unchanged) -->
-  %%KEEP-REST%%
+<!-- ─────────────────────────────── HERO TITLE ─────────────────────────────── -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            VPD-LM: Improving Driving Safety Assessment via Object-Level Visual Prompting in Vision-Language Models
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Anonymous Author(s)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <span class="link-block">
+            <a href="VPD_LM (5).pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+              <span class="icon"><i class="ai ai-arxiv"></i></span><span>Paper PDF</span>
+            </a>
+          </span>
+          <span class="link-block">
+            <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
+              <span class="icon"><i class="fab fa-github"></i></span><span>Code (Coming Soon)</span>
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────── ABSTRACT ─────────────────────────────── -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="content has-text-justified">
+        <h2 class="title is-3 has-text-centered">Abstract</h2>
+        <hr class="section-divider">
+        <p class="is-size-5">
+          Vision-Language Models (VLMs) have demonstrated remarkable visual-reasoning capabilities, positioning them as promising solutions for a wide range of autonomous-driving (AD) tasks. Unlike traditional expert-driven AD models, which often operate as opaque black boxes, VLMs generate natural-language explanations for their decisions, offering inherent interpretability. This interpretability enables explicit reasoning about driving safety and facilitates identification of rare or high-risk scenarios that conventional systems may overlook.
+          However, existing VLM-based frameworks often struggle with grounding and tracking specific objects over time—a limitation that undermines robust decision-making in dynamic, real-world environments.
+          In this work, we introduce <em><b>VPD-LM</b></em>, an end-to-end Vision-Language Model for Autonomous Driving that addresses these challenges through object-centric, video-based visual prompts and chain-of-thought (CoT) reasoning. <em><b>VPD-LM</b></em> processes raw camera inputs and sensor metadata to generate interpretable natural-language outputs for core driving tasks, including planning, perception, and safety assessment.
+          To rigorously evaluate safety reasoning, we go beyond standard nuScenes-based benchmarks by constructing a novel Driving Safety Benchmark. We extract ~3,000 long-tail scenarios with potential collision risks from the nuPlan dataset using our proposed Road-Graph Occupancy Detection method. From these, 600 representative scenarios are manually labeled into three risk categories—low, medium, and high—creating a challenging, fine-grained testbed for risk-aware driving models.
+          Empirical results demonstrate that <em><b>VPD-LM</b></em> achieves strong performance in motion planning and threat assessment while generalizing effectively to complex, previously unseen scenarios. Our work highlights the potential of VLM-driven reasoning to significantly enhance safety, interpretability, and robustness in next-generation autonomous-driving systems.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────── OUR APPROACH ──────────────────────────── -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Our Approach</h2>
+      <hr class="section-divider">
+
+      <div id="results-carousel-approach" class="carousel results-carousel" data-interval="4500">
+
+        <!-- 1. Visual Prompting -->
+        <div class="item">
+          <h3 class="subtitle is-size-4-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+            1. Object-Centric Visual Prompting &amp; Annotation
+          </h3>
+          <div class="columns is-vcentered">
+            <div class="column is-one-third">
+              <img src="static/images/vpd_lm_concept_visual_prompting.png" alt="Object-Centric Visual Prompting"
+                   style="width:100%;height:auto;border:1px solid #ccc;">
+            </div>
+            <div class="column">
+              <p class="is-size-5">
+                VPD-LM introduces a temporal object-centric annotation pipeline. Expert detection models
+                (e.g., DINO, YOLO-World) identify key road agents in video frames. Segmentation models like SAM-2 track
+                objects across the sequence, yielding consistent masks and IDs. These structured annotations are overlaid
+                to create visual prompts, enabling the VLM to attend to specific agents and their temporal behaviours.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Risky Scenarios -->
+        <div class="item">
+          <h3 class="subtitle is-size-4-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+            2. Mining Long-Tail Risky Scenarios
+          </h3>
+          <div class="columns is-vcentered">
+            <div class="column is-one-third">
+              <img src="static/images/vpd_lm_concept_risky_scenarios.png" alt="Mining Risky Scenarios"
+                   style="width:100%;height:auto;border:1px solid #ccc;">
+            </div>
+            <div class="column">
+              <p class="is-size-5">
+                We propose a rule-based Road-Graph Occupancy Detection method to identify rare but critical driving
+                scenarios. By simulating short-horizon occupancy regions for different meta-actions (e.g., accelerate,
+                change lane), we flag scenarios as risky when spatial overlaps indicate potential collisions. This
+                pipeline built our novel Driving Safety Benchmark from nuPlan.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Reasoning -->
+        <div class="item">
+          <h3 class="subtitle is-size-4-tablet has-text-weight-bold has-text-centered has-background-info-light mr-0 pt-3 pb-3">
+            3. Structured Grounded Reasoning with VLMs
+          </h3>
+          <div class="columns is-vcentered">
+            <div class="column is-one-third">
+              <img src="static/images/vpd_lm_concept_reasoning_flow.png" alt="Reasoning Flow"
+                   style="width:100%;height:auto;border:1px solid #ccc;">
+            </div>
+            <div class="column">
+              <p class="is-size-5">
+                VPD-LM follows a hierarchical CoT reasoning process:<br>
+                (1) Scene Understanding → (2) Crucial-Object Analysis → (3) Task-Specific modules
+                (Prediction / Planning / Risk-Assessment). This coarse-to-fine pipeline bridges low-level perception with
+                high-level decision making and yields interpretable outputs.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /carousel -->
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────── RESULTS ──────────────────────────────── -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Demonstration &amp; Results</h2>
+      <hr class="section-divider">
+
+      <div class="columns is-multiline">
+
+        <!-- PPP -->
+        <div class="column is-one-third">
+          <div class="box">
+            <h4 class="title is-4 has-text-centered">Enhanced Perception, Prediction &amp; Planning</h4>
+            <img src="static/images/vpd_lm_capability_ppp.png" alt="PPP"
+                 style="width:100%;margin-bottom:1em;border:1px solid #ccc;">
+            <p>
+              VPD-LM ingests visually-prompted frames and sensor metadata to output detailed scene perception,
+              prediction of participant intentions, and future plans for the ego vehicle—all in natural language.
+            </p>
+          </div>
+        </div>
+
+        <!-- Safety -->
+        <div class="column is-one-third">
+          <div class="box">
+            <h4 class="title is-4 has-text-centered">Superior Safety Assessment<br>(Driving Risky Benchmark)</h4>
+            <img src="static/images/vpd_lm_results_safety_benchmark.png" alt="Safety Benchmark"
+                 style="width:100%;margin-bottom:1em;border:1px solid #ccc;">
+            <p>
+              On 600 nuPlan scenarios, VPD-R1 attains <strong>92.28 % accuracy</strong>, surpassing GPT-40 (60.05 %) and
+              InternVL3 (68.71 %), highlighting its strength in complex long-tail settings.
+            </p>
+          </div>
+        </div>
+
+        <!-- DriveBench -->
+        <div class="column is-one-third">
+          <div class="box">
+            <h4 class="title is-4 has-text-centered">Broad Task Generalization<br>(DriveBench)</h4>
+            <img src="static/images/vpd_lm_results_drivebench.png" alt="DriveBench"
+                 style="width:100%;margin-bottom:1em;border:1px solid #ccc;">
+            <p>
+              VPD-R1 achieves top DriveBench scores in Perception (<strong>52.69</strong>) and Planning
+              (<strong>60.67</strong>), indicating effective transfer of safety-driven reasoning to general driving tasks.
+            </p>
+          </div>
+        </div>
+
+      </div><!-- /columns -->
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────── BIBTEX ──────────────────────────────── -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
+    <hr class="section-divider">
+<pre><code>@inproceedings{vpd_lm_neurips2025,
+  title  = {Improving Driving Safety Assessment via Object-Level Visual Prompting in Vision-Language Models},
+  author = {Anonymous Author(s)},
+  booktitle = {Submitted to Conference on Neural Information Processing Systems (NeurIPS)},
+  year   = {2025}
+}</code></pre>
+  </div>
+</section>
+
+<!-- ─────────────────────────────── FOOTER ──────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p style="color:gray;font-size:9.9px;">
+            This page was built using the
+            <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">
+              Academic Project Page Template
+            </a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ─────────────────────────────── JS HELPER ────────────────────────────── -->
+<script>
+  /* Legacy highlight helper (unused) */
+  function toggleHighlight(tag, highlightColor) {
+    const clicked   = event.target;
+    const elements  = document.querySelectorAll('.' + tag);
+    const active    = clicked.classList.contains('highlight');
+
+    document.querySelectorAll('.highlight')
+            .forEach(el => el.classList.remove('highlight'));
+
+    if (!active) {
+      clicked.classList.add('highlight');
+      elements.forEach(el => el.style.backgroundColor = highlightColor);
+    } else {
+      elements.forEach(el => el.style.backgroundColor = '');
+    }
+  }
+</script>
 </body>
 </html>
