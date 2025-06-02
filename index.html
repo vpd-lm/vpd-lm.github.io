@@ -448,6 +448,54 @@ lane changes or sudden maneuvers.
   </div>
 </div>
 
+
+      <!-- Example 7 -->
+<div class="item">
+  <div class="box demo-example">
+    <h4 class="title is-4 has-text-centered">Example&nbsp;7 • Downtown Intersection with Construction Detour</h4>
+
+    <div class="columns is-multiline is-mobile">
+      <div class="column is-half"><figure class="image"><img src="static/examples/exp7/0077.jpg" alt="exp7 frame 1"></figure></div>
+      <div class="column is-half"><figure class="image"><img src="static/examples/exp7/0079.jpg" alt="exp7 frame 2"></figure></div>
+      <div class="column is-half"><figure class="image"><img src="static/examples/exp7/0081.jpg" alt="exp7 frame 3"></figure></div>
+      <div class="column is-half"><figure class="image"><img src="static/examples/exp7/0083.jpg" alt="exp7 frame 4"></figure></div>
+
+      <div class="column is-full">
+<pre class="vlm-output"><strong>1. scene description</strong>
+the scene depicts an urban street intersection during daytime with overcast weather conditions. the ego vehicle is positioned at what appears 
+to be a crosswalk area in a downtown commercial district. the surrounding environment features multi-story buildings with retail storefronts, 
+including a distinctive blue building with mural artwork on the left side. traffic signals are visible ahead, showing green lights. there are 
+several pedestrians visible on both sidewalks, some crossing the street. the road surface shows clear lane markings, and the intersection appears
+to have moderate traffic flow. orange construction barriers are visible on the right side of the frame, suggesting ongoing work in that area.
+the overall setting suggests a busy city center with typical urban infrastructure elements like crosswalks, traffic signals, and pedestrian walkways.
+
+<strong>2. critical objects</strong>
+object 1: this appears to be a vehicle directly ahead of the ego vehicle, likely traveling in the same direction through the intersection.  
+object 5: this is a red sedan positioned to the front-right of the ego vehicle, appearing to be preparing to turn right at the intersection.  
+object 2: this appears to be a person or pedestrian located on the left side of the frame near the crosswalk area.
+
+<strong>3. risk analysis</strong>
+in analyzing the potential for conflict between the ego vehicle and other agents, we need to consider the spatial proximity and intended trajectories 
+of all relevant entities:  
+
+the ego vehicle is positioned behind object 1, which is directly ahead in the same lane. if object 1 continues forward while the ego vehicle
+accelerates, there could be a rear-end collision risk. however, since object 1 appears to be maintaining its position in the lane ahead, this risk is minimal.  
+
+object 5 (red sedan) is positioned to the front-right of the ego vehicle. this vehicle appears to be preparing to make a right turn at the intersection.
+given its position and trajectory, it will likely move into the right lane while the ego vehicle remains in its current lane. this creates a potential
+conflict if the ego vehicle attempts to change lanes or accelerate while object 55 is executing its right turn maneuver.  
+
+object 2 (pedestrian) is positioned on the left side of the frame near the crosswalk area. this pedestrian may potentially enter the roadway from the sidewalk, 
+creating a risk of collision if they suddenly step into the path of the ego vehicle. however, the pedestrian appears to be stationary in this frame, 
+so immediate risk is low.
+
+<strong>risk level: unsafe</strong>
+</pre>
+      </div>
+    </div>
+  </div>
+</div>
+
       </div><!-- /carousel -->
       
 
