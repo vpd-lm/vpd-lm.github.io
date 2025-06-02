@@ -360,49 +360,51 @@ not currently intrude into the ego lane, but vigilance is required should any pe
   </div>
 </div>
 
+        <!-- Example 5 -->
+<div class="item">
+  <div class="box demo-example">
+    <h4 class="title is-4 has-text-centered">Example&nbsp;5 • San Francisco Commercial Street</h4>
+    <div class="columns is-multiline is-mobile">
+      <div class="column is-half"><figure class="image"><img src="static/examples/exp5/0175.jpg" alt="exp5 frame 1"></figure></div>
+      <div class="column is-half"><figure class="image"><img src="static/examples/exp5/0177.jpg" alt="exp5 frame 2"></figure></div>
+      <div class="column is-half"><figure class="image"><img src="static/examples/exp5/0179.jpg" alt="exp5 frame 3"></figure></div>
+      <div class="column is-half"><figure class="image"><img src="static/examples/exp5/0181.jpg" alt="exp5 frame 4"></figure></div>
 
-      </div><!-- /carousel -->
-      
-<div id="results-carousel-demos" class="carousel results-carousel" data-interval="6000">
-
-        <!-- Example 1 -->
-        <div class="item">
-          <div class="box demo-example">
-            <h4 class="title is-4 has-text-centered">Example&nbsp;1 • Residential Street Risk Assessment</h4>
-            <div class="columns is-multiline is-mobile">
-              <div class="column is-half"><figure class="image"><img src="static/examples/exp1/0229.jpg" alt="exp1 frame 1"></figure></div>
-              <div class="column is-half"><figure class="image"><img src="static/examples/exp1/0231.jpg" alt="exp1 frame 2"></figure></div>
-              <div class="column is-half"><figure class="image"><img src="static/examples/exp1/0233.jpg" alt="exp1 frame 3"></figure></div>
-              <div class="column is-half"><figure class="image"><img src="static/examples/exp1/0237.jpg" alt="exp1 frame 4"></figure></div>
-              <div class="column is-full">
+      <div class="column is-full">
 <pre class="vlm-output"><strong>1. Scene Description</strong>
-The scene depicts a clear, sunny day with excellent visibility on a residential street in what appears to be a suburban neighborhood. 
-The ego vehicle is traveling on a two-lane road with yellow center dividing lines, passing through a curved section of the street. 
-On both sides of the road are large, upscale houses with well-maintained properties featuring white fences, manicured lawns, and modern 
-architecture. There are several parked vehicles along the curb, including a <strong>white pickup truck (object 1)</strong> on the right 
-side and another <strong>white pickup truck (object 2)</strong> on the left side. The road surface shows some wear with visible cracks,
-but overall it appears to be in reasonable condition. Trees line the street, and construction materials can be seen near one of the houses 
-on the right side. <strong>Traffic appears light, with no moving vehicles visible ahead of the ego car.</strong>
+the scene depicts a bright, sunny day in what appears to be a commercial district of san francisco, characterized by iconic victorian-style buildings 
+lining both sides of the street. the ego vehicle is traveling on a two-way road with yellow center dividing lines, surrounded by multi-story residential 
+and commercial buildings. the urban environment features pedestrian crosswalks at intersections, decorative string lights strung across the street, 
+and various storefronts including “grant green market” visible on the right side. traffic is moderate with several vehicles visible ahead of the ego 
+car, including a black sedan (object 8) directly in front and a blue sedan (object 9) directly ahead. the road has some wear with visible cracks and 
+patches, and there are no visible pedestrians crossing the street in the immediate vicinity of the ego vehicle.
 
 <strong>2. Critical Objects</strong>
-Object 1 — White pickup truck positioned front-right of the ego vehicle.
-Object 2 — White pickup truck positioned front-left of the ego vehicle.
+object 8: this is a <strong>black sedan</strong> positioned directly ahead of the ego vehicle in the same lane. this vehicle is slightly to the left 
+of the ego vehicle’s path.  
+object 10: this appears to be another <strong>vehicle</strong> positioned further ahead of the ego vehicle in the same lane. it is likely slightly 
+ahead of object 8.  
+object 9: this is a <strong>blue sedan</strong> directly in front of the ego vehicle, occupying the same lane and positioned slightly to the right 
+of the ego vehicle’s path.
 
 <strong>3. Risk Analysis</strong>
-In this scenario, the ego vehicle is traveling on a residential street with moderate traffic conditions. The most significant risk factor 
-is the proximity of multiple vehicles to the ego vehicle, particularly the white pickup trucks (objects 1 and 2) that are positioned to 
-the front-right of the ego vehicle. These vehicles appear to be parked along the curb rather than actively participating in traffic flow.
-If the ego vehicle were to make any sudden maneuvers, especially if attempting to change lanes or pass these parked vehicles, there would 
-be a risk of collision. The vehicles are positioned close to each other, and any unexpected movement could create a dangerous situation. 
-Additionally, the presence of parked vehicles on both sides of the road limits escape routes for the ego vehicle in case of an emergency stop.
+In this scenario, the ego vehicle is traveling on a two-lane street with moderate traffic. the <strong>black sedan (object 8)</strong> is directly 
+ahead in the same lane, while the <strong>blue sedan (object 9)</strong> is also directly in front of the ego vehicle. the presence of multiple vehicles
+ahead creates the potential for unexpected maneuvers. If the blue sedan were to brake suddenly, it could create a hazard for the ego vehicle. 
+Similarly, if the black sedan accelerates or changes lanes, it would also pose a risk. Although a white van (object 2) is visible in the right lane, 
+it does not currently interact with the ego vehicle’s path.
 
 <strong>Risk Level: UNSAFE</strong>
 </pre>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div><!-- /carousel -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      </div><!-- /carousel -->
+      
+
       
     </div>
   </div>
