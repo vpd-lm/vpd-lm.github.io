@@ -175,27 +175,27 @@
 </section>
 
 <!-- ───────── DEMONSTRATION & RESULTS ───────── -->
-<section class="hero is-small" id="demonstration">
+
+
+  <section class="hero is-small" id="demonstration">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Demonstration &amp; Results</h2>
       <hr class="section-divider">
 
-      <!-- Existing summary boxes would appear here -->
+      <!-- Carousel with examples -->
+      <div id="results-carousel-demos" class="carousel results-carousel" data-interval="6000">
 
-      <!-- ─── Example 1 ─── -->
-      <div class="box demo-example mt-4">
-        <h4 class="title is-4 has-text-centered">Example&nbsp;1 • Residential Street Risk Assessment</h4>
-
-        <div class="columns is-multiline is-mobile">
-          <!-- 4-frame grid -->
-          <div class="column is-half"><figure class="image"><img src="static/examples/exp1/0229.jpg" alt="exp1 frame 1"></figure></div>
-          <div class="column is-half"><figure class="image"><img src="static/examples/exp1/0231.jpg" alt="exp1 frame 2"></figure></div>
-          <div class="column is-half"><figure class="image"><img src="static/examples/exp1/0233.jpg" alt="exp1 frame 3"></figure></div>
-          <div class="column is-half"><figure class="image"><img src="static/examples/exp1/0237.jpg" alt="exp1 frame 4"></figure></div>
-
-          <!-- VLM output -->
-          <div class="column is-full">
+        <!-- Example 1 -->
+        <div class="item">
+          <div class="box demo-example">
+            <h4 class="title is-4 has-text-centered">Example&nbsp;1 • Residential Street Risk Assessment</h4>
+            <div class="columns is-multiline is-mobile">
+              <div class="column is-half"><figure class="image"><img src="static/examples/exp1/0229.jpg" alt="exp1 frame 1"></figure></div>
+              <div class="column is-half"><figure class="image"><img src="static/examples/exp1/0231.jpg" alt="exp1 frame 2"></figure></div>
+              <div class="column is-half"><figure class="image"><img src="static/examples/exp1/0233.jpg" alt="exp1 frame 3"></figure></div>
+              <div class="column is-half"><figure class="image"><img src="static/examples/exp1/0237.jpg" alt="exp1 frame 4"></figure></div>
+              <div class="column is-full">
 <pre class="vlm-output"><strong>1. Scene Description</strong>
 The scene depicts a clear, sunny day with excellent visibility on a residential street in what appears to be
 a suburban neighborhood. The ego vehicle is traveling on a two-lane road with yellow center dividing lines,
@@ -221,13 +221,62 @@ Additionally, the presence of parked vehicles on both sides of the road limits e
 
 <strong>Risk Level: UNSAFE</strong>
 </pre>
-          </div><!-- /column -->
-        </div><!-- /columns -->
-      </div><!-- /Example 1 -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 2 -->
+        <div class="item">
+          <div class="box demo-example">
+            <h4 class="title is-4 has-text-centered">Example&nbsp;2 • Urban Intersection with Pedestrian Crossing</h4>
+            <div class="columns is-multiline is-mobile">
+              <div class="column is-half"><figure class="image"><img src="static/examples/exp2/0209.jpg" alt="exp2 frame 1"></figure></div>
+              <div class="column is-half"><figure class="image"><img src="static/examples/exp2/0211.jpg" alt="exp2 frame 2"></figure></div>
+              <div class="column is-half"><figure class="image"><img src="static/examples/exp2/0215.jpg" alt="exp2 frame 3"></figure></div>
+              <div class="column is-half"><figure class="image"><img src="static/examples/exp2/0217.jpg" alt="exp2 frame 4"></figure></div>
+              <div class="column is-full">
+<pre class="vlm-output"><strong>1. Scene Description</strong>
+The scene depicts a clear, sunny day with excellent visibility on a residential street in what appears to be <strong>San&nbsp;Francisco</strong>, characterized by 
+its distinctive architecture. The ego vehicle is traveling on a two‑lane road with a yellow centerline dividing opposing traffic directions. The surrounding 
+environment features multi‑story apartment buildings, single‑family homes, and commercial establishments. Power lines run overhead along both sides of the street, 
+and there are pedestrian crosswalks visible at an intersection ahead. The road surface shows some wear with visible cracks, but overall appears to be in reasonable 
+condition. The area has <strong>moderate traffic</strong> with several vehicles parked along the curb and a few moving vehicles visible in the distance. Trees lining 
+the street and varied housing structures underscore the residential nature of the neighborhood.
+
+<strong>2. Critical Objects</strong>
+Object 1: this is a dark‑colored <strong>SUV/crossover</strong> vehicle positioned to the front‑right of the ego vehicle.
+Object 2: this is a silver/gray <strong>sedan</strong> positioned further ahead and slightly to the right of the ego vehicle.
+Object 3: this is a <strong>dark‑colored sedan/pickup truck</strong> parked on the left side of the road near a crosswalk.
+Object 4: this appears to be a <strong>pedestrian crossing sign</strong> located near the crosswalk area on the left side of the road.
+
+<strong>3. Risk Analysis</strong>
+In this scenario, the ego vehicle is traveling on a two‑lane road approaching an intersection where it will likely need to stop for pedestrians crossing. The most critical 
+objects are the <strong>dark SUV (object 1)</strong> directly ahead of the ego vehicle and the <strong>silver sedan (object 2)</strong> positioned to the right of the ego vehicle.
+
+The dark SUV (object 1) presents no immediate conflict since it is positioned ahead of the ego vehicle and appears to be maintaining its lane. However, the silver sedan (object 2) 
+could potentially enter the ego vehicle's path if making a right turn or changing lanes, creating a possible conflict that requires caution.
+
+The ego vehicle should maintain its current lane and slow down as it approaches the intersection, preparing to stop for pedestrians. Close monitoring of object 2’s intentions 
+is essential, while object 1 poses no immediate threat if it continues forward in its lane.
+
+<strong>Risk Level: UNSAFE</strong></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /carousel -->
 
     </div>
   </div>
 </section>
+
+
+
+
+
+
 
 <!-- ────────── BIBTEX ────────── -->
 <section class="section" id="BibTeX">
