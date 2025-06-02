@@ -541,6 +541,69 @@ path rather than creating a conflict.
   </div>
 </div>
 
+        <!-- Example 9 -->
+<div class="item">
+  <div class="box demo-example">
+    <h4 class="title is-4 has-text-centered">Example&nbsp;9 • Under-Overpass City Intersection</h4>
+    <div class="columns is-multiline is-mobile">
+      <div class="column is-half">
+        <figure class="image">
+          <img src="static/examples/exp9/0028.jpg" alt="exp9 frame 1">
+        </figure>
+      </div>
+      <div class="column is-half">
+        <figure class="image">
+          <img src="static/examples/exp9/0026.jpg" alt="exp9 frame 2">
+        </figure>
+      </div>
+      <div class="column is-half">
+        <figure class="image">
+          <img src="static/examples/exp9/0032.jpg" alt="exp9 frame 3">
+        </figure>
+      </div>
+      <div class="column is-half">
+        <figure class="image">
+          <img src="static/examples/exp9/0030.jpg" alt="exp9 frame 4">
+        </figure>
+      </div>
+
+      <div class="column is-full">
+<pre class="vlm-output"><strong>1. Scene Description</strong>
+The scene depicts an urban environment under a large concrete overpass structure with multiple lanes of traffic flowing beneath it. 
+The weather appears to be clear with good visibility. The ego vehicle is positioned at what seems to be a major intersection, with traffic 
+signals visible ahead. The road consists of several lanes with lane markings clearly visible. There are various vehicles present, including 
+a <strong>delivery truck (object 4)</strong> on the right side of the road and a <strong>white sedan (object 5)</strong> on the left side. 
+The surrounding area features commercial buildings, trees, and pedestrian crosswalks. Traffic appears moderate with vehicles moving in 
+different directions, and the overall environment suggests this is a busy city street with multiple intersections and traffic control 
+measures in place.
+
+<strong>2. Critical Objects</strong>
+<strong>Object 4</strong>: a delivery truck positioned to the front-right of the ego vehicle.  
+<strong>Object 5</strong>: a white sedan positioned to the front-left of the ego vehicle.  
+<strong>Object 1</strong>: a vehicle positioned directly in front of the ego vehicle.  
+<strong>Object 7</strong>: a no-right-turn sign mounted on a pole to the front-left of the ego vehicle.  
+<strong>Object 10</strong>: a no-right-turn sign positioned to the front-right of the ego vehicle.
+
+<strong>3. Risk Analysis</strong>
+In this scenario, the ego vehicle appears to be approaching an intersection under an overpass where traffic signals are visible. 
+The most critical objects are the <strong>delivery truck (object 4)</strong> and the <strong>white sedan (object 5)</strong>, both positioned 
+in adjacent lanes to the ego vehicle.
+
+If the ego vehicle plans to proceed through the intersection while maintaining its current lane, there is minimal conflict with these objects. 
+The delivery truck (object 4) is positioned to the front-right and appears to be traveling in its own lane, likely preparing to make a right turn. 
+Similarly, the white sedan (object 5) is positioned to the front-left and appears to be traveling in its own lane. Neither vehicle presents an 
+immediate threat to the ego vehicle’s path if it continues forward.
+
+However, if the ego vehicle plans to change lanes or make a turn, there could be potential conflicts with these vehicles. For example, if the ego 
+vehicle attempts to change to the right lane, it would need to navigate around the delivery truck (object 4) which is positioned in that lane. 
+Similarly, if the ego vehicle intends to make a left turn, it would need to pass the white sedan (object 5) which is positioned in the left lane.
+
+<strong>Risk Level: UNSAFE</strong></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       </div><!-- /carousel -->
       
